@@ -24,6 +24,10 @@ function writePassword() {
 //THEN I choose a length of at least 8 characters and no more than 128 characters
 //THEN I am presented with a series of prompts for password criteria
 function generatePassword() {
+  //empty array for user choice of character types 
+  var userchoice = []
+  console.log(userchoice)
+  
   var userlength = window.prompt("How long do you want your password to be. Choose a number between 8 and 128?");
   if (userlength < 8 ) {
     window.alert("Password is too short, please add characters.");
@@ -53,33 +57,16 @@ function generatePassword() {
     userchoice= userchoice.concat(numbeopt)
   }
 
-/*this part is not working but attempting to ask the code to pick a random set of numbers (length = userlength)
- , then use math.random() to pick a random nubmer from that array(s) ... need to somehow ask code to pick from all arrays user 
- said 'ok' to: number, uppercase, lowercase, special,
- 
- console.log is saying random is not defined*/
 
-userchoice[Math.random (userlength)];
-
-// console.log (userpicks);
-console.log(random);
-console.log(userchoice);
-console.log(userlength);
-console.log(userchoice .length);
-console.log(userchoise.length);
-console.log(userlength.length);
-console.log(userlength .length);
-
+  //do/while - loops through a block of code while a specified condition is true
+  var password = [];
+  do{
+    password += userchoice[Math.floor(Math.random() * userchoice.length)];
+  }
+  while (password.length < userlength);
+  return password;
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-//acceptance criteria// STILL TO DO
-
-/*THEN a password is generated that matches the selected criteria
-
-WHEN the password is generated
-
-THEN the password is either displayed in an alert or written to the page*/

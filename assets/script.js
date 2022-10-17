@@ -37,7 +37,7 @@ function generatePassword() {
     var special = window.confirm("Would you like special characters in your password? If yes, press 'OK'.");
     var numchoice = window.confirm("Would you like numbers in your password? If yes, press 'OK'.");
   if (!lowerCase && !upperCase && !special && !numchoice){
-    window.alert("Please enter OK to at least one character type: uppercase, lowercase, special, and/or numbers to generate a password.")
+    window.alert("Please enter \'OK\' to at least one character type: uppercase, lowercase, special, and/or numbers to generate a password.")
   };
   //same if for each var from window.confirm and upper const  
   if (lowerCase){
@@ -52,27 +52,33 @@ function generatePassword() {
   if (numchoice){
     userchoice= userchoice.concat(numbeopt)
   }
-//userchoice will have all the options ok'd, 
-//take userchoice array & select random char. (RPS) and spec. length. from userlength. 
-//eventuall put them into generatePassword needs to return the final password string. 
 
-//what I wrote
-userchoice = Math.floor(Math.random() * userlength.length);
-generatePassword = userlength[generatePassword];
-return
+/*this part is not working but attempting to ask the code to pick a random set of numbers (length = userlength)
+ , then use math.random() to pick a random nubmer from that array(s) ... need to somehow ask code to pick from all arrays user 
+ said 'ok' to: number, uppercase, lowercase, special,
+ 
+ console.log is saying random is not defined*/
+
+userchoice[Math.random (userlength)];
+
+// console.log (userpicks);
+console.log(random);
+console.log(userchoice);
+console.log(userlength);
+console.log(userchoice .length);
+console.log(userchoise.length);
+console.log(userlength.length);
+console.log(userlength .length);
+
 }
-
-//from the RPS activity 
-var index = Math.floor(Math.random() * options.length);
-var computerChoice = options[index];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//acceptance criteria//
-/*GIVEN I need a new, secure password
 
-THEN a password is generated that matches the selected criteria
+//acceptance criteria// STILL TO DO
+
+/*THEN a password is generated that matches the selected criteria
 
 WHEN the password is generated
 
